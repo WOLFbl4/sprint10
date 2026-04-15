@@ -222,13 +222,6 @@ chmod +x install_ansible.sh
 
 Перед использованием Terraform необходимо настроить профиль Yandex Cloud.
 
-Создаем зеркало для скачивания провайдера
-```bash
-nano ~/.terraformrc
-```
-
----
-
 #### 🔹Получение идентификаторов
 
 1. Перейдите в консоль Yandex Cloud
@@ -236,11 +229,17 @@ nano ~/.terraformrc
    → скопируйте **Cloud ID**
 3. Выберите каталог (folder) внутри облака
    → скопируйте **Folder ID**
-
+4. Создать (открыть) сервисный аккаунт.
+   → Cкопируйте **ID аккаунта**
 
 Дальше создайте ключ авторизации в облаке для провайдера:
 
-
+```bash
+yc iam key create \
+  --service-account-id <ID аккаунта> \
+  --folder-name default \
+  --output key.json
+```
 
 ---
 
