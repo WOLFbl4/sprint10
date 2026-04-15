@@ -149,6 +149,7 @@ chmod +x install_yc_terraform.sh
 cd terraform_yandex
 
 terraform init
+terraform validate
 terraform apply
 ```
 
