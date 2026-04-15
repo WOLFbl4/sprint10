@@ -190,25 +190,25 @@ cd sprint10
 ### 3. Выдача прав на скрипты
 
 ```bash
-chmod +x install_terraform.sh
 chmod +x install_yc_terraform.sh
+chmod +x install_ansible.sh
 ```
 
 ---
 
-### 4. Установка Terraform
-
-```bash
-./install_terraform.sh
-```
-
-или (для Yandex Cloud):
+### 4. Установка Terraform для Yandex Cloud:
 
 ```bash
 ./install_yc_terraform.sh
 ```
 
-### 5. Настройка профиля Yandex Cloud
+### 5. Установка Аnsible:
+
+```bash
+./install_ansible.sh
+```
+
+### 6. Настройка профиля Yandex Cloud
 
 Перед использованием Terraform необходимо настроить профиль Yandex Cloud.
 
@@ -265,7 +265,7 @@ export YC_FOLDER_ID=$(yc config get folder-id)
 
 ---
 
-### 6. Развертывание инфраструктуры
+### 7. Развертывание инфраструктуры
 
 ```bash
 cd ~/sprint10/terraform_yandex
@@ -277,7 +277,7 @@ terraform apply
 
 ---
 
-### 7. Настройка серверов через Ansible
+### 8. Настройка серверов через Ansible
 
 ```bash
 cd ../ansible
@@ -291,7 +291,6 @@ ansible-playbook -i inventory.yaml playbook.yml
 
 * ❗ `terraform.tfstate` — не редактировать вручную
 * 🔐 `terraform.tfvars` — может содержать секретные данные
-* 📁 `.terraform/` — должен быть в `.gitignore`
 
 ---
 
