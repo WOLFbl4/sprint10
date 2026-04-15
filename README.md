@@ -191,9 +191,64 @@ chmod +x install_yc_terraform.sh
 ./install_yc_terraform.sh
 ```
 
+#№# 5. Настройка профиля Yandex Cloud
+
+Перед использованием Terraform необходимо настроить профиль Yandex Cloud.
+
 ---
 
-### 5. Развертывание инфраструктуры
+#### 🔹Получение идентификаторов
+
+1. Перейдите в консоль Yandex Cloud
+2. Нажмите на имя облака (начинается с `cloud-`)
+   → скопируйте **Cloud ID**
+3. Выберите каталог (folder) внутри облака
+   → скопируйте **Folder ID**
+
+---
+
+#### 🔹 Настройка профиля
+
+Создайте профиль:
+
+```bash
+yc config profile create <имя_профиля>
+```
+
+Укажите сервисный ключ:
+
+```bash
+yc config set service-account-key key.json
+```
+
+Установите идентификаторы:
+
+```bash
+yc config set cloud-id <CLOUD_ID>
+yc config set folder-id <FOLDER_ID>
+```
+
+---
+
+#### 🔹 Экспорт переменных окружения
+
+```bash
+export YC_TOKEN=$(yc iam create-token)
+export YC_CLOUD_ID=$(yc config get cloud-id)
+export YC_FOLDER_ID=$(yc config get folder-id)
+```
+
+---
+
+### ⚠️ Важно
+
+* 📄 `key.json` — ключ сервисного аккаунта (не добавлять в репозиторий)
+---
+
+
+---
+
+### 6. Развертывание инфраструктуры
 
 ```bash
 cd ~/sprint10/terraform_yandex
@@ -205,7 +260,7 @@ terraform apply
 
 ---
 
-### 6. Настройка серверов через Ansible
+### 7. Настройка серверов через Ansible
 
 ```bash
 cd ../sprint10/ansible
