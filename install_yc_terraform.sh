@@ -38,7 +38,25 @@ export PATH=$PATH:$HOME/yandex-cloud/bin
 echo "Шаг 4: Копирование исполняемых файлов yc в /usr/local/bin..."
 sudo cp "$HOME/yandex-cloud/bin/yc" /usr/local/bin/
 
-# 6. Финальная инициализация
+# 6. Настроим зеркало для скачивания провайдера
+echo "Создание ~/.terraformrc"
+cat <<EOF > ~/.terraformrc
+provider_installation {
+  network_mirror {
+    url = "https://terraform-mirror.yandexcloud.net/"
+    include = ["registry.terraform.io/*/*"]
+  }
+  direct {
+    exclude = ["registry.terraform.io/*/*"]
+  }
+}
+EOF
+
+echo "Файл ~/.terraformrc создан"
+echo "Проверка содержимого:"
+cat ~/.terraformrc
+
+# 7. Финальная инициализация
 echo "---------------------------------------------------"
 echo "Установка завершена!"
 echo "Далее перейдите по ссылке, которая будет выведена в консоль для настройки доступа к облаку."
