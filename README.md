@@ -90,25 +90,25 @@
 * 🧩 `roles/common`
   Базовая настройка всех серверов
   
-* 📄 `tasks/main.yml`
+* 📄 `roles/common/tasks/main.yml`
   Устанавливает базовые пакеты
 
 * 🧩 `roles/nginx_backend`
   Отдающий сервер (backend)
   
-* 📄 `tasks/main.yml`
+* 📄 `roles/nginx_backend/tasks/main.yml`
   Устанавливает nginx. Копирует HTML страницу index.html.j2. Запускает сервис
   
-* 📄 `templates/index.html.j2`
+* 📄 `roles/nginx_backend/templates/index.html.j2`
   Шаблон страницы
 
 * 🧩 `roles/nginx_proxy`
   Проксирующий сервер (балансировщик)
   
-* 📄 `tasks/main.yml`
+* 📄 `roles/nginx_proxy/tasks/main.yml`
   Устанавливает nginx. Пприменяет конфиг. Запускает nginx
   
-* 📄 `templates/nginx.conf.j2`
+* 📄 `roles/nginx_proxy/templates/nginx.conf.j2`
   Конфиг Nginx
 
 ---
