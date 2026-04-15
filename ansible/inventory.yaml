@@ -1,0 +1,26 @@
+all:
+  children:
+    # Для сервера с ролью backend
+    backend:
+      hosts:
+        srv-02:
+          ansible_host: 192.168.10.26
+          ansible_user: ubuntu
+          ansible_ssh_common_args: '-o ProxyJump=ubuntu@178.154.209.36'
+        srv-03:
+          ansible_host: 192.168.10.21
+          ansible_user: ubuntu
+          ansible_ssh_common_args: '-o ProxyJump=ubuntu@178.154.209.36'
+
+    # Для сервера с ролью proxy
+    proxy:
+      hosts:
+        srv-01:
+          ansible_host: 178.154.209.36
+          ansible_user: ubuntu
+
+    # Авторизация по SSH-ключу
+  vars:
+    ansible_ssh_private_key_file: ~/.ssh/id_ed25519
+    # Отключаем проверку ключей, так как IP у облачных ВМ часто меняются
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
