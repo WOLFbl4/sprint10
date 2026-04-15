@@ -196,7 +196,7 @@ chmod +x install_yc_terraform.sh
 ### 5. Развертывание инфраструктуры
 
 ```bash
-cd terraform_yandex
+cd ~/sprint10/terraform_yandex
 
 terraform init
 terraform validate
