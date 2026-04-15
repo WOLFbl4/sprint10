@@ -308,7 +308,7 @@ ansible-playbook -i inventory.yaml playbook.yml
 
 ### 9. Дополнительные команды
 
-#### Удалить и создать заново
+#### Удалить и создать заново с теми же параметрами из terraform.tfvars
 
 ```bash
 cd ~/sprint10/terraform_yandex
@@ -316,7 +316,6 @@ cd ~/sprint10/terraform_yandex
 terraform destroy -auto-approve
 terraform apply -auto-approve
 ```
-всё удалится → создастся заново с теми же параметрами из terraform.tfvars
 
 #### Выключить конкретную машину
 
