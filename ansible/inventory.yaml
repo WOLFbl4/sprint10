@@ -4,19 +4,19 @@ all:
     backend:
       hosts:
         srv-02:
-          ansible_host: 192.168.10.26
+          ansible_host: 10.10.10.12
           ansible_user: ubuntu
-          ansible_ssh_common_args: '-o ProxyJump=ubuntu@178.154.209.36'
+          ansible_ssh_common_args: '-o ProxyJump=ubuntu@123.123.123.123'
         srv-03:
-          ansible_host: 192.168.10.21
+          ansible_host: 10.10.10.13
           ansible_user: ubuntu
-          ansible_ssh_common_args: '-o ProxyJump=ubuntu@178.154.209.36'
+          ansible_ssh_common_args: '-o ProxyJump=ubuntu@123.123.123.123'
 
     # Для сервера с ролью proxy
     proxy:
       hosts:
         srv-01:
-          ansible_host: 178.154.209.36
+          ansible_host: 123.123.123.123
           ansible_user: ubuntu
 
     # Авторизация по SSH-ключу
