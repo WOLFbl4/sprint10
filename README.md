@@ -15,11 +15,11 @@
 
 ### 🔧 Скрипты установки
 
-* 📄 `install_terraform.sh`
-  Устанавливает чистый Terraform
-
 * 📄 `install_yc_terraform.sh`
   Устанавливает Terraform с профилем Yandex Cloud
+
+* 📄 `install_ansible.sh`
+  Устанавливает Ansible
 
 ---
 
