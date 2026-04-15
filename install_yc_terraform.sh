@@ -55,7 +55,7 @@ EOF
 echo "Файл ~/.terraformrc создан"
 echo "Проверка содержимого:"
 cat ~/.terraformrc
-chmod +x -R ~/.terraform
+chmod +x -R ~/.terraformrc
 
 # 7. Финальная инициализация
 echo "---------------------------------------------------"
