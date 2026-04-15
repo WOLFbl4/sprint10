@@ -73,16 +73,33 @@
   Основной конфигурационный файл Ansible
 
 * 📄 `inventory.ini`
-  Inventory в формате INI
+  Inventory в формате INI (список серверов)
 
 * 📄 `inventory.yaml`
-  Inventory в формате YAML
+  Inventory в формате YAML (список серверов)
 
 * 📄 `inventory.tftpl`
   Шаблон inventory (используется Terraform)
 
-* 🧩 `nginx.conf.j2`
-  Jinja2-шаблон конфигурации Nginx
+* 📄 `playbook.yml`
+  Главный сценарий Ansible. Определяет что запускать и на каких серверах
+
+* 📁 `roles/`
+  Здесь хранится вся логика. Каждая роль - отдельная задача
+
+* 🧩 `roles/common`
+* 📄 `tasks/main.yml`
+  Базовая настройка всех серверов. Устанавливает базовые пакеты:
+
+* 🧩 `roles/nginx_backend`
+* 📄 `tasks/main.yml`
+* 📄 `templates/index.html.j2`
+  Отдающий сервер (backend). Устанавливает nginx. Копирует HTML страницу index.html.j2. Запускает сервис. 
+
+* 🧩 `roles/nginx_proxy`
+* 📄 `tasks/main.yml`
+* 📄 `templates/nginx.conf.j2`
+  Отдающий сервер (backend). Устанавливает nginx. Копирует конфиг nginx.conf.j2. Запускает nginx.
 
 ---
 
