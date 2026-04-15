@@ -265,7 +265,7 @@ terraform apply
 ```bash
 cd ../sprint10/ansible
 
-ansible-playbook -i inventory.ini playbook.yml
+ansible-playbook -i inventory.yaml playbook.yml
 ```
 
 ---
