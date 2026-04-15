@@ -191,7 +191,7 @@ chmod +x install_yc_terraform.sh
 ./install_yc_terraform.sh
 ```
 
-#№# 5. Настройка профиля Yandex Cloud
+### 5. Настройка профиля Yandex Cloud
 
 Перед использованием Terraform необходимо настроить профиль Yandex Cloud.
 
