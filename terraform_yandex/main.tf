@@ -62,7 +62,7 @@ resource "yandex_compute_instance" "virtual_machine" {
 # 4. Cоздавать файл инвентаря при каждом запуске для ansible
 resource "local_file" "ansible_inventory" {
   # Указываем путь к папке ansible.
-  filename = "${path.module}/../ansible/inventory.yaml"
+  filename = "${path.module}/../sprint10/ansible/inventory.yaml"
   content = templatefile("${path.module}/inventory.tftpl", {
     vms = yandex_compute_instance.virtual_machine
   # Находим IP машины, которая будет бастионом
