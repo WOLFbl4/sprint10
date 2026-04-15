@@ -263,7 +263,7 @@ terraform apply
 ### 7. Настройка серверов через Ansible
 
 ```bash
-cd ../sprint10/ansible
+cd ../ansible
 
 ansible-playbook -i inventory.yaml playbook.yml
 ```
