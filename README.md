@@ -88,18 +88,28 @@
   Здесь хранится вся логика. Каждая роль - отдельная задача
 
 * 🧩 `roles/common`
-  📄 `tasks/main.yml`
-  Базовая настройка всех серверов. Устанавливает базовые пакеты:
+  Базовая настройка всех серверов
+  
+* 📄 `tasks/main.yml`
+  Устанавливает базовые пакеты
 
 * 🧩 `roles/nginx_backend`
-  📄 `tasks/main.yml`
-  📄 `templates/index.html.j2`
-  Отдающий сервер (backend). Устанавливает nginx. Копирует HTML страницу index.html.j2. Запускает сервис. 
+  Отдающий сервер (backend)
+  
+* 📄 `tasks/main.yml`
+  Устанавливает nginx. Копирует HTML страницу index.html.j2. Запускает сервис
+  
+* 📄 `templates/index.html.j2`
+  Шаблон страницы
 
 * 🧩 `roles/nginx_proxy`
-  📄 `tasks/main.yml`
-  📄 `templates/nginx.conf.j2`
-  Отдающий сервер (backend). Устанавливает nginx. Копирует конфиг nginx.conf.j2. Запускает nginx.
+  Проксирующий сервер (балансировщик)
+  
+* 📄 `tasks/main.yml`
+  Устанавливает nginx. Пприменяет конфиг. Запускает nginx
+  
+* 📄 `templates/nginx.conf.j2`
+  Конфиг Nginx
 
 ---
 
