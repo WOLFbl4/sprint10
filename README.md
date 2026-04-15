@@ -287,6 +287,21 @@ ansible-playbook -i inventory.yaml playbook.yml
 
 ---
 
+### 9. Дополнительные команды
+
+#### Выключить конкретную машину
+
+```bash
+yc compute instance stop srv-01
+```
+
+#### Выключить все машины (если их много)
+
+```bash
+yc compute instance list | awk 'NR>3 {print $2}' | xargs -L1 yc compute instance stop
+```
+---
+
 ## 🧠 Важно
 
 * ❗ `terraform.tfstate` — не редактировать вручную
