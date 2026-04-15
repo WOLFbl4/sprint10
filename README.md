@@ -89,12 +89,17 @@
 ## 🔄 Как работает проект
 
 ```text
-Terraform → создает инфраструктуру в Yandex Cloud
-          → генерирует inventory
+1. Terraform
+   → создает ВМ
+   → генерирует inventory
 
-Ansible → подключается к серверам
-         → применяет конфигурацию
-         → настраивает Nginx
+2. Ansible:
+   → common (все ВМ)
+   → nginx_backend (backend)
+   → nginx_proxy (proxy)
+
+4. Результат:
+   :3000 → proxy → backend → "Hello from <hostname>"
 ```
 
 ---
